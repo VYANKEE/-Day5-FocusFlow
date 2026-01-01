@@ -1,0 +1,116 @@
+/* src/App.css */
+:root {
+  --bg-dark: #0f1115;
+  --bg-card: #181b21;
+  --text-main: #ffffff;
+  --text-muted: #a1a1aa;
+  
+  /* Focus Mode Colors */
+  --focus: #ff6b6b;   /* Soft Red/Orange */
+  --break: #4ecdc4;   /* Calm Cyan */
+  --long-break: #45b7d1; 
+
+  --font-main: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-main);
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Glassmorphism Card */
+.glass-card {
+  background: rgba(24, 27, 33, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, var(--focus), #ff9f43);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--focus);
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(255, 107, 107, 0.4);
+}
+
+/* Sections */
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Timer Specifics */
+.timer-display {
+  font-size: 8rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums; /* Prevents jitter when numbers change */
+  line-height: 1;
+  margin: 20px 0;
+}
+
+.mode-btn {
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.1);
+  color: var(--text-muted);
+  padding: 8px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.mode-btn.active {
+  border-color: var(--focus);
+  color: white;
+  background: rgba(255, 107, 107, 0.1);
+}
